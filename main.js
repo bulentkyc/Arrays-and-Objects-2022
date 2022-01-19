@@ -49,9 +49,13 @@ const myNewArr = new Array('Tchibo', 'Jacobs', 'Nescafe');
 
 console.log(myNewArr);
 
-const doIHaveArray = Array.isArray({0:'abc'});
+const doIHaveArray = Array.isArray([]);//true
 
 console.log(doIHaveArray);
+
+console.log(Array.isArray({0:'abc'}));//false
+console.log(Array.isArray(myNewArr));//treu
+console.log(Array.isArray(filteredFound));//true
 
 //////////////////
 
@@ -74,5 +78,31 @@ console.log(aboutCoffee);
 const aboutCoffeeThings = Object.values(myCoffee);
 console.log(aboutCoffeeThings);
 
+/////////////////////////////////////////////////////////
+//Destructuring:
+//Concept
+let brands = ['BMW', 'Porsche', 'Skoda', 'Lada'];
+/* 
+let car1;
+let car2;
+let car3;
+let car4;
+this block is same as the line below.
+ */
+let car1, car2, car3, car4;
 
+car1 = brands[0];
+car2 = brands[1];
+car3 = brands[2];
+car4 = brands[3];
 
+brands.pop();
+brands.pop();
+brands.push('Mercedes');
+
+console.log(car1);
+console.log(car2);
+console.log(car3);//Mercedes //Skoda
+console.log(car4);
+
+console.log(brands);
