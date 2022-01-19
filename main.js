@@ -104,5 +104,52 @@ console.log(car1);
 console.log(car2);
 console.log(car3);//Mercedes //Skoda
 console.log(car4);
-
+car4 = 'Suzuki';
+console.log(car4);
 console.log(brands);
+/* -------------------------------------------------------------------------- */
+
+let garage = [
+    {
+        brand:'BMW', 
+        engine:3
+    },
+    {
+        brand:'Porsche', 
+        engine:5
+    }, 
+    {
+        brand:'Skoda', 
+        engine:2
+    }, 
+    {
+        brand:'Lada', 
+        engine:1
+    }
+];
+
+let auto1, auto2, auto3, auto4;
+
+auto1 = garage[0];
+auto2 = garage[1];
+auto3 = garage[2];
+auto4 = garage[3];
+
+garage.pop();
+
+console.log(auto1);
+console.log(auto2);
+console.log(auto3);
+console.log(auto4); //undefined //obeject for lada // delete engine
+
+delete auto1.brand;
+delete auto1.engine;
+
+console.log(garage);
+
+
+
+
+
+
+
