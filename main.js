@@ -46,6 +46,9 @@ console.log(newItems);
 ///////
 
 const myNewArr = new Array('Tchibo', 'Jacobs', 'Nescafe');
+const testA = ['Tchibo', 'Jacobs', 'Nescafe'];
+console.log(typeof(myNewArr));
+console.log(typeof(testA));
 
 console.log(myNewArr);
 
@@ -147,9 +150,63 @@ delete auto1.engine;
 
 console.log(garage);
 
+//Syntax:
+const testArr = ['fox', 'rabbit', 'dog', 'cat', 'lion']
+let x,y,z, others;
+[x,y,z, ...others] = testArr;
+
+console.log(x);
+console.log(y);
+console.log(z);
+console.log(others);
+
+/*
+const testArr = ['fox']
+let x,y,z;
+[x,y] = testArr;
+
+console.log(x);//fox
+console.log(y);//undefined
+console.log(z);/undefined
+*/
 
 
+/*
+const testArr = ['fox', 'rabbit', 'dog']
+let x,y,z;
+[x,y] = testArr;
 
+console.log(x);//fox
+console.log(y);//rabbit
+console.log(z);//undefined
 
+*/
 
+//Destuctring Objects 
+//Syntax & Concept
 
+let myCar = {
+    brand: 'Bentley',
+    engine: 5000,
+    color: 'white',
+    seats: 'lether'
+}
+
+let abc, engine, color, seats, brand;
+/*
+order of variables is not important 
+but variable names have to be same as keys
+*/
+({abc, engine, color, seats, brand} = myCar);
+/* 
+abc = myCar.abc;
+engine = myCar.engine;
+color = myCar.color;
+seats = myCar.seats;
+brand = myCar.brand;
+ */
+console.log(abc);//undefined
+console.log(engine);
+console.log(color);
+console.log(seats);
+console.log(brand);
