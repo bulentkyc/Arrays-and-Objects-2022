@@ -189,7 +189,8 @@ let myCar = {
     brand: 'Bentley',
     engine: 5000,
     color: 'white',
-    seats: 'lether'
+    seats: 'lether',
+    panaroma: true
 }
 
 let abc, engine, color, seats, brand;
@@ -225,3 +226,105 @@ console.log(myCar.color[0].toLocaleUpperCase()+myCar.color.slice(1));
 
 console.log(myCar.color);
 
+
+///////////////////////////////////////
+//Destructuring others with ...
+
+let panaroma, rest;
+
+({panaroma, ...rest} = myCar);
+
+console.log(panaroma);
+console.log(rest);
+
+///////////////////////////////////////
+//Destructring array to use items as parameters
+
+const coffeeMachine = (coffeAmount, waterAmount, milk) => {
+    const coffee = {
+        coffeAmount, 
+        waterAmount, 
+        milk
+    }
+    return coffee;
+}
+
+console.log(coffeeMachine('20g', '200ml', true));
+
+const myCoffeeRecepie = ['50g', '100ml', false];
+
+console.log(coffeeMachine(...myCoffeeRecepie));
+
+///////////////////////////////////////
+//Callback Functions
+
+const gift = (event, person) => {
+    return {event, person, gift: 'Some gift'};
+}
+
+const party = (event, person) => {
+    return {event, person, people: 'Essence', foods: 'Some foods', musics: 'Some Music', isAlcohol: false}
+}
+
+const celebrate = (event, person, celebrationType) => {
+    console.log(`Hey ${person} congrats for the ${event}!
+    Here you are:`)
+    console.log(celebrationType(event, person));
+}
+
+celebrate('birthday', 'Bülent', gift);
+
+celebrate('birthday', 'Bülent', party);
+
+celebrate('birthday', 'Bülent', (event, person) => {
+    return {event, person, isOnline: true}
+});
+
+console.log(gift);
+
+//Example2
+
+const sum = (a, b, dci) => {
+    const result = a + b;
+    //log the result
+    //alert the result
+    //console.log(result);
+    dci('Calculation is done');
+    return result;
+}
+
+const display = (item) => {
+    console.log(item);
+    alert(item);
+}
+
+sum(3,5, display);
+
+//Example3
+
+const pc = (electricity, inputs, slot) => {
+    if (electricity) {
+        if (inputs) {
+            return slot(electricity);
+        } else {
+            return 'PC needs all inputs to run!'
+        }
+    } else {
+        return `Pc doesn't work!`;
+    }
+}
+
+
+const cdWriter = (electricity) =>{
+    if (electricity) {
+        return 'Burn CD'
+    } 
+}
+
+const blueRayWriter = (electricity) =>{
+    if (electricity) {
+        return 'Blueray is ready'
+    } 
+}
+
+alert(pc(true, true, blueRayWriter));
