@@ -199,6 +199,7 @@ but variable names have to be same as keys
 */
 ({abc, engine, color, seats, brand} = myCar);
 /* 
+The code line 200 makes the as same as the block below
 abc = myCar.abc;
 engine = myCar.engine;
 color = myCar.color;
@@ -210,3 +211,17 @@ console.log(engine);
 console.log(color);
 console.log(seats);
 console.log(brand);
+
+//Remember: We can create objects with variables as key and value.
+let a = 1, b = 2, c = 3;
+
+let newestObj = {a,b,c}
+
+console.log(newestObj);
+
+///////////////////////////////////////
+//Capitalise the value without updating the object
+console.log(myCar.color[0].toLocaleUpperCase()+myCar.color.slice(1));
+
+console.log(myCar.color);
+
