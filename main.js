@@ -16,12 +16,12 @@ console.log(newItems);
 
 //find
 
-const found = newItems.find((element, i ) => {
+/* const found = newItems.find((element, i ) => {
     console.log(i, element);
     return element == 'banana'
-});
+}); */
 
-//const found = newItems.find(element => element == 'peach');
+const found = newItems.find(element => element == 'peach');
 
 console.log(found);
 
@@ -149,11 +149,12 @@ delete auto1.brand;
 delete auto1.engine;
 
 console.log(garage);
+console.log(auto4);
 
 //Syntax:
 const testArr = ['fox', 'rabbit', 'dog', 'cat', 'lion']
 let x,y,z, others;
-[x,y,z, ...others] = testArr;
+[x,y,,z, ...others] = testArr;
 
 console.log(x);
 console.log(y);
@@ -254,7 +255,6 @@ console.log(coffeeMachine('20g', '200ml', true));
 const myCoffeeRecepie = ['50g', '100ml', false];
 
 console.log(coffeeMachine(...myCoffeeRecepie));
-
 ///////////////////////////////////////
 //Callback Functions
 
@@ -327,4 +327,15 @@ const blueRayWriter = (electricity) =>{
     } 
 }
 
+console.log(cdWriter);
+console.log(blueRayWriter(true));
+
 alert(pc(true, true, blueRayWriter));
+
+const myTestO = () => {
+    return 'Hello World'
+}
+
+const myTestO2 = myTestO;
+
+console.log(myTestO2());
