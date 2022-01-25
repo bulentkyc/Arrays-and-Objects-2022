@@ -112,3 +112,47 @@ const myCopyObj = {...myTestObj, color: 'green'};
 myMirrorObj.count = 1;
 
 console.log(myTestObj, myMirrorObj, myCopyObj);
+
+/////////////////////////////////////////////////////
+//Nested Objects and Arrays
+
+const dciCourses = [
+    {
+        courseName: 'WebDev', 
+        classes: [
+            {
+                name: 'Essence', 
+                attendees: [
+                    'Abdulhakeem', 
+                    'Allan', 
+                    'Andrija', 
+                    'Anne', 
+                    'Carlos'
+                ]
+            }, 
+            {
+                name: 'WD-E06-01', 
+                attendees: [
+                    'Steve', 
+                    'Newton', 
+                    'Einstein'
+                ]
+            }
+        ]
+    },
+    {
+        courseName: 'Online Marketing', 
+        classes: [
+            {
+                name: 'OM-E05-01', 
+                attendees: [
+                    'Bill', 
+                    'Jhon', 
+                    'Deon', 
+                    'Imelda', 
+                    'El Patron'
+                ]
+            }
+        ]
+    }
+];
