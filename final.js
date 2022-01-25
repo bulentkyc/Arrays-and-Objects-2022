@@ -31,15 +31,84 @@ myObject.getDrink();
 
 ////////////////////////////////////////////////////////////////////////////
 //Spread operators (Shallow clonning)
+//There could be referance cloning.
 
 const testArray = ['apple', 'banana', 'cherry'];
 
 console.log(testArray);
 console.log(...testArray);
 
-const myNewArray = [...testArray, 'strawbeey'];
+const myNewArray = [...testArray]; // Shallow clonning
 console.log(myNewArray);
 
-const myMirrorArray = testArray;
+const myMirrorArray = testArray; //Cloning the referanse
 console.log(myMirrorArray);
 
+myMirrorArray.push('Ananas');
+myNewArray.push('Mango');
+testArray.push('Orange');
+
+console.log('testArray',testArray);
+console.log('myNewArray', myNewArray);
+console.log('myMirrorArray', myMirrorArray);
+
+const myBox = [
+    {
+        brand: 'Milka', 
+        type: 'Milk bar'
+    },
+    {
+        brand: 'Kinder', 
+        type: 'Riegel'
+    },
+    {
+        brand: 'Kider', 
+        type: 'Surprise'
+    },
+];
+
+const newBox = [...myBox];
+
+newBox.pop()
+
+
+newBox[0].shape = 'ball';
+
+// Deep Cloning:
+// There's no any referance cloning.
+
+const chocoBox = JSON.parse(JSON.stringify(myBox));
+
+chocoBox[0].shape = 'triangle';
+
+console.log(myBox, newBox, chocoBox);
+
+//Recursive functions for deep cloning
+
+const clone = array => array.map(item => Array.isArray(item)?clone(item):item);
+
+const testArr = [100, 321, 'Hello World', ['apple', 'banana'], [1,2,3]];
+
+const cloneTest = clone(testArr);
+
+testArr.pop();
+
+console.log(testArr, cloneTest);
+
+
+/////////////////////////////////////////////////////
+// Spread operators in objects
+
+const myTestObj = {
+    fruit: 'apple',
+    count: 5,
+    origin: 'Netherlands'
+}
+
+const myMirrorObj = myTestObj;
+
+const myCopyObj = {...myTestObj, color: 'green'};
+
+myMirrorObj.count = 1;
+
+console.log(myTestObj, myMirrorObj, myCopyObj);
