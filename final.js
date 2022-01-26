@@ -156,3 +156,62 @@ const dciCourses = [
         ]
     }
 ];
+
+console.log(dciCourses[1].classes[0]['attendees'][3]); // Imelda :)
+
+const courseGenerator = (courseName) => {
+    dciCourses.push({courseName: courseName, classes: []})
+}
+
+newClassName = prompt('Please type the new class name');
+courseGenerator(newClassName);
+
+console.log(dciCourses);
+
+
+const list = [2, 5, 1, 20, 8, 6];
+
+console.log(list);
+
+const goal = [1, 2, 5, 6, 8, 20];
+
+
+function bubbleSort(array) {
+    const numbers = array.slice()
+    console.log("numbers:" ,numbers);
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = 0; j < numbers.length - 1 - i; j++) {
+            if (numbers[j] > numbers[j + 1])
+            [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]]; // Using ES6 numbers destructuring to swap
+        }
+    }   
+    return numbers;
+}
+let numbers = [6,3,100,4,5,20,55,68]
+
+console.log(bubbleSort(numbers))
+
+console.log(numbers)
+/* 
+[6,3,10,4,5,20,55,68]
+[3,6,10,4,5,20,55,68]
+[3,6,10,4,5,20,55,68]
+[3,6,4,10,5,20,55,68]
+[3,6,4,5,10,20,55,68]
+[3,6,4,5,10,20,55,68]
+[3,6,4,5,10,20,55,68]
+[3,6,4,5,10,20,55,68]
+[3,6,4,5,10,20,55,68]
+
+
+[3,6,4,5,10,20,55,68]
+
+
+[6,3,100,4,5,20,55,68]
+[3,6,100,4,5,20,55,68]
+[3,6,100,4,5,20,55,68]
+[3,6,4,100,5,20,55,68]
+[3,6,4,5,100,20,55,68]
+[3,6,4,5,20,100,55,68]
+[3,6,4,5,20,55,100,68]
+[3,6,4,5,20,55,68,100] */
